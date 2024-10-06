@@ -5,25 +5,31 @@
 
 CheckD is a metagenomics tool used to assess the diversity of metagenome-assembled genomes (MAGs). CheckD can be used for MAGs assembled from short reads or long reads. 
 
-# Installation and Setup 
+## Software Requirements: 
+- Python 3.8 or late
+- apptainer 1.3.3 (Singularity)
 
-Software Requirements: 
-python3
-apptainer (singularity)
+
+## Installation and Setup 
 
 ```
 git clone wget https://github.com/katemortensen/CheckD.git
-cd CheckD
-wget https://omics.informatics.indiana.edu/CheckD/bin.tar.gz
-tar -xzvf bin.tar.gz bin
+wget -P ./CheckD/. https://omics.informatics.indiana.edu/CheckD/bin.tar.gz
+tar -xzvf ./CheckD/bin.tar.gz 
 ```
 
-# Usage
+## Test Run
+
+```
+sh ./CheckD/example/illumina_example.sh
+sh ./CheckD/example/hifi_example.sh
+```
+
+## Usage
 
 Inputs:
-Metagenome-assembled genomes (MAGs)
-Illumina or HiFi reads
-
+- Metagenome-assembled genomes (MAGs)
+- Illumina or HiFi reads from which the MAGs were assembled
 
 
 Illumina short reads:
