@@ -1,0 +1,93 @@
+Bootstrap: docker
+From: ubuntu:20.04  # or any other base image you prefer
+
+%labels
+    Author Kate Mortensen
+    Version 1.0
+
+%help
+    This image contains CheckD, its dependencies, and additional Python libraries.
+
+%post
+    # Update the package list and install system-level dependencies
+    apt-get update && apt-get install -y \
+        build-essential \
+        curl \
+        libtool \
+        pkg-config \
+        python3 \
+        python3-pip \
+        libbz2-dev \
+        liblzma-dev \
+        libcurl4-openssl-dev \
+        zlib1g-dev \
+        libssl-dev
+
+    # Install Python libraries via pip
+    pip3 install \
+        pandas \
+        numpy \
+        pysam \
+        matplotlib \
+        seaborn \
+        scipy \
+        statsmodels \
+        checkm-genome \
+        concurrent.futures \
+        multiprocessing \
+        shutil \
+        csvkit \
+        screed
+
+    # Install or configure other software dependencies for your tool
+
+    curl -LO https://example.com/mytool.tar.gz
+    tar xzf mytool.tar.gz
+    cd mytool
+    ./configure
+    make
+    make install
+
+    # create CheckD bin
+    # download CheckD
+    # unzip bin
+
+    # bcftools-1.20
+
+    curl --header 'Host: objects.githubusercontent.com' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://github.com/' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' --header 'Sec-Fetch-Dest: document' --header 'Sec-Fetch-Mode: navigate' --header 'Sec-Fetch-Site: cross-site' --header 'Sec-Fetch-User: ?1' --header 'Sec-GPC: 1' 'https://objects.githubusercontent.com/github-production-release-asset-2e65be/11368595/f7ac467b-31ff-4a7d-9ecf-d75cadc8a32a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240926%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240926T125858Z&X-Amz-Expires=300&X-Amz-Signature=564c0ac73dce1182e9551774c038cbe77a5e817a73563fad35958bf6a6069748&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dbcftools-1.20.tar.bz2&response-content-type=application%2Foctet-stream' --output 'bcftools-1.20.tar.bz2'
+    tar -xvf bcftools-1.20.tar.bz2 
+    cd bcftools-1.20
+    ./configure
+    make
+
+    # CRISPRone-main
+
+    # FragGeneScan1.31
+
+    # infernal-1.1.2
+
+    # metaCRT
+
+    # minimap2
+
+    # myDGR
+
+    # Rfam 
+
+    # samtools-1.20
+
+    # VirSorter2
+
+
+
+%environment
+    # Set environment variables for runtime
+    export PATH=/mytool/bin:$PATH
+
+%runscript
+    # This section defines what the image should run by default
+    exec /mytool/bin/mytool "$@"
+
+%test
+    # Optional test script
+    mytool --version

@@ -1,0 +1,12 @@
+name: checkd_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.8.10  # example
+  - pip=20.0.2
+  - software_1  # replace with software name
+  - software_2  # replace with software name
+  - pip:
+    - 
+

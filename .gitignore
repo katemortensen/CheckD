@@ -1,0 +1,9 @@
+# Exclude directories
+/var/www/omics.informatics.indiana.edu/CheckD/bin
+/var/www/omics.informatics.indiana.edu/CheckD/scripts/__pycache__
+
+# Exclude files 
+/var/www/omics.informatics.indiana.edu/CheckD/README.md.bak
+/var/www/omics.informatics.indiana.edu/CheckD/bin.tar.gz
+/var/www/omics.informatics.indiana.edu/CheckD/bin
+
