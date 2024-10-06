@@ -1,25 +1,36 @@
+# ![Logo](./diagrams/checkD_logo.drawio.png) CheckD
+
+
 # CheckD
 
 CheckD is a metagenomics tool used to assess the diversity of metagenome-assembled genomes (MAGs). 
 
 CheckD can be used for MAGs assembled from short reads or long reads. 
 
-# Setup 
+# Installation and Setup 
 
 Software Requirements: 
 python3
 apptainer (singularity)
 
-Inputs:
-Metagenome-assembled genomes (MAGs)
-Illumina or HiFi reads
-
+```
+git clone wget https://github.com/katemortensen/CheckD.git
+cd CheckD
+wget https://omics.informatics.indiana.edu/CheckD/bin.tar.gz
+tar -xzvf bin.tar.gz bin
+```
 # Overview
 
 CheckD provides insight into the diversity of a MAG based on allelic depth of mapped reads. 
 
 
 # Usage
+
+Inputs:
+Metagenome-assembled genomes (MAGs)
+Illumina or HiFi reads
+
+
 
 Illumina short reads:
 
