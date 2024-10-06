@@ -1,11 +1,9 @@
-# ![Logo](./diagrams/checkD_logo.drawio.png) CheckD
+# ![Logo](./diagrams/checkD_logo.drawio.png) 
 
 
-# CheckD
+# Overview
 
-CheckD is a metagenomics tool used to assess the diversity of metagenome-assembled genomes (MAGs). 
-
-CheckD can be used for MAGs assembled from short reads or long reads. 
+CheckD is a metagenomics tool used to assess the diversity of metagenome-assembled genomes (MAGs). CheckD can be used for MAGs assembled from short reads or long reads. 
 
 # Installation and Setup 
 
@@ -19,10 +17,6 @@ cd CheckD
 wget https://omics.informatics.indiana.edu/CheckD/bin.tar.gz
 tar -xzvf bin.tar.gz bin
 ```
-# Overview
-
-CheckD provides insight into the diversity of a MAG based on allelic depth of mapped reads. 
-
 
 # Usage
 
