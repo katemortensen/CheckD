@@ -93,6 +93,10 @@ parser4.add_argument("-hifi_reads", "--hifi_reads", metavar="hifi reads", help="
 parser4.add_argument("-illumina_forward_reads", "--illumina_forward_reads", metavar="illumina reads", help="", required=False)
 parser4.add_argument("-illumina_reverse_reads", "--illumina_reverse_reads", metavar="illumina reads", help="", required=False)
 parser4.add_argument("-threads", "--threads", metavar="", help="", required=False)
+parser4.add_argument("-window", "--window", metavar="", help="", required=False)
+parser4.add_argument("-step", "--step", metavar="", help="", required=False)
+
+
 
 args = parser.parse_args()
 command = args.command

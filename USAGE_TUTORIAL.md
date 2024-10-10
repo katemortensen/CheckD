@@ -104,7 +104,9 @@ python3 <path_to>/CheckD/scripts/checkd.py \
         -mag_dir <path_to_mags> \
         -illumina_forward_reads <path_to_reads1.fastq> \
         -illumina_reverse_reads <path_to_reads2.fastq> \
-        -threads 8
+        -threads 8 \
+	-window <window_size> \
+	-step <step_size>
 ```
 
 PacBio HiFi:
@@ -116,7 +118,9 @@ python3 <path_to>/CheckD/scripts/checkd.py \
         -output_dir <path_to_output> \
         -mag_dir <path_to_mags> \
         -hifi_reads <path_to_hifi_reads.fastq> \
-        -threads 8
+        -threads 8 \
+	-window <window_size> \
+	-step <step_size>
 ```
 
 
