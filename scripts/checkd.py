@@ -541,6 +541,13 @@ if (command == 'region') or (command == 'all'):
                 print(f'VirSorter2 already done for {mag_name}')
 
 
+    # remove VirSorter2 singularity file (.sif file is memory intensive)
+    try:
+        subprocess.run(['rm', '-f', f'{virsorter_out_dir}/virsorter2.sif'],
+                       check=True, capture_output=True, text=True)
+    except subprocess.CalledProcessError as e:
+        print('unable to remove virsorter2.sif file')
+
 # %%
 
 if (command == 'stats') or (command == 'all'):

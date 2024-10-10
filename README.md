@@ -26,12 +26,16 @@ wget -P ./CheckD/. https://omics.informatics.indiana.edu/CheckD/bin.tar.gz
 tar -xzvf ./CheckD/bin.tar.gz -C ./CheckD/.
 rm ./CheckD/bin.tar.gz
 ```
-## Conda
+## Conda Environment
 
-conda env create -f checkd_conda_env.yml 
+```
+conda env create -f ./CheckD/scripts/checkd_conda_env.yml 
 conda activate checkd_env
+```
 
 ## Test Run
+
+The following test runs stress test the functionality of CheckD on the user's platform, as well as, provide examples of the appropriate setup.
 
 ```
 cd CheckD/example/
