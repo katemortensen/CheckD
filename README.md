@@ -83,9 +83,7 @@ python3 <path_to>/CheckD/scripts/checkd.py \
 
 The user can also select window and step sizes for output plots using the "-step" and "-window" arguments. Otherwise, default sizes are applied (50k window, 40k step and 5k window, 4k step).
 
+For more details, see the link below.
 
-[usage tutorial](https://github.com/katemortensen/CheckD/USAGE_TUTORIAL.md)
+[usage tutorial](https://github.com/katemortensen/CheckD/blob/main/USAGE_TUTORIAL.md)
 
-## Pipeline Details
-
-i![alt text](https://github.com/katemortensen/Hypervariable-region-aware-co-assembly-of-metagenomes/blob/9f18217452eb15362cc46c4c5fc05f9e9709498e/images/repeat_guided_spacer_disc_20220510-Page-1.drawio.png)
