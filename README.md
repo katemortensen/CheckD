@@ -12,7 +12,7 @@ CheckD is a metagenomics tool used to assess the diversity of metagenome-assembl
  CheckD can be used for MAGs assembled from short reads or long reads. CheckD uses software to identify various regions including coding domain sequences (CDS), non-coding RNA (ncRNA), Diversity Generating Retroelements (DGR) systems, CRISPR regions and artifacts, and viral DNA. 
 
 ## Software Requirements: 
-- Python 3.8 or late
+- Python 3.8 
 - apptainer 1.3.3 (Singularity)
 
 
@@ -60,6 +60,7 @@ Illumina:
 
 ```
 python3 <path_to>/CheckD/scripts/checkd.py \
+	all
         -basename healthy_human_gut \
         -output_dir <path_to_output> \
         -mag_dir <path_to_mags> \
@@ -72,6 +73,7 @@ PacBio HiFi:
 
 ```
 python3 <path_to>/CheckD/scripts/checkd.py \
+	all
         -basename lake_griffy_soil \
         -output_dir <path_to_output> \
         -mag_dir <path_to_mags> \
@@ -81,9 +83,8 @@ python3 <path_to>/CheckD/scripts/checkd.py \
 
 The user can also select window and step sizes for output plots using the "-step" and "-window" arguments. Otherwise, default sizes are applied (50k window, 40k step and 5k window, 4k step).
 
-[ADD SUB-ARGUMENTS HERE]
 
-[usage tutorial](https://github.com/katemortensen/Hypervariable-region-aware-co-assembly-of-metagenomes/blob/585052fb24fd959ab47ce077d4daa5e0ba7511d7/hypervar-pipeline/usage_tutorial.md)
+[usage tutorial](https://github.com/katemortensen/CheckD/USAGE_TUTORIAL.md)
 
 ## Pipeline Details
 
