@@ -32,7 +32,7 @@ python3 <path_to>/CheckD/scripts/checkd.py \
         -threads 8
 ```
 
-![Map reads to MAGs and calculate diversity](./diagrams/checkD_diversity.drawio.png)
+#![Map reads to MAGs and calculate diversity](./diagrams/checkD_diversity.drawio.png)
 
 ## Step 2: Region Detection
 
@@ -96,8 +96,6 @@ python3 <path_to>/CheckD/scripts/checkd.py \
 
 CheckD produces sliding window plots for all MAGs to show diversity across regions. 
 
-![Sliding Window Plots](./diagrams/bin.80_contig.1_w5000_s4000_mean_ad_norm.png)
-
 Illumina:
 
 ```
@@ -128,6 +126,6 @@ python3 <path_to>/CheckD/scripts/checkd.py \
 ```
 
 
-
+![Sliding Window Plots](./diagrams/bin.80_contig.1_w5000_s4000_mean_ad_norm.png)
 
 
