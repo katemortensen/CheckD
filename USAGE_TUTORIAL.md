@@ -33,7 +33,7 @@ python3 <path_to>/CheckD/scripts/checkd.py \
 ```
 
 ![Map reads to MAGs and calculate diversity](./diagrams/checkD_diversity.drawio.png)
-<img src="./diagrams/checkD_diversity.drawio.png" alt="Map reads to MAGs and calculate diversity" width="200">
+<img src="./diagrams/checkD_diversity.drawio.png" alt="Map reads to MAGs and calculate diversity" width="600">
 
 ## Step 2: Region Detection
 
