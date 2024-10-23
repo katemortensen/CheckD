@@ -6,8 +6,6 @@ The CheckD pipeline is broken down into 4 main sections: mapping reads to MAGs, 
 
 In this step, reads that were used to assembly MAGs in the cohort are mapped back to their MAGs using minimap2. Once mapping is complete, Bcftools is used to generate a VCF file. The allelic depth ("AD") produced in the VCF file is later used to generate diversity scores. 
 
-![Map reads to MAGs and calculate diversity](./diagrams/checkD_diversity.drawio.png)
-
 
 Illumina:
 
@@ -33,6 +31,8 @@ python3 <path_to>/CheckD/scripts/checkd.py \
         -hifi_reads <path_to_hifi_reads.fastq> \
         -threads 8
 ```
+
+![Map reads to MAGs and calculate diversity](./diagrams/checkD_diversity.drawio.png)
 
 ## Step 2: Region Detection
 
@@ -96,7 +96,7 @@ python3 <path_to>/CheckD/scripts/checkd.py \
 
 CheckD produces sliding window plots for all MAGs to show diversity across regions. 
 
-![Sliding Window Plots](./diagrams/checkD_sliding_window.drawio.png)
+![Sliding Window Plots](./diagrams/bin.80_contig.1_w5000_s4000_mean_ad_norm.png)
 
 Illumina:
 
