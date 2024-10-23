@@ -3,13 +3,7 @@
 
 ## Overview
 
-CheckD is a metagenomics tool used to assess the diversity of metagenome-assembled genomes (MAGs).
-
-[ADD QUICK DETAILS ABOUT OUTPUT]
-
-[MOVE BELOW TO ANOTHER PAGE THAT BREAKS DOWN THE STEPS]
-
- CheckD can be used for MAGs assembled from short reads or long reads. CheckD uses software to identify various regions including coding domain sequences (CDS), non-coding RNA (ncRNA), Diversity Generating Retroelements (DGR) systems, CRISPR regions and artifacts, and viral DNA. 
+CheckD is a metagenomics tool used to assess the diversity of metagenome-assembled genomes (MAGs). Diversity is evaluated by mapping reads back to MAGs and assessing the allelic depth of positions in the MAGs. CheckD can be used for MAGs assembled from Illumina short reads or PacBio HiFi long reads. CheckD analyzes diversity across various regions including coding domain sequences (CDS), non-coding RNA (ncRNA), Diversity Generating Retroelements (DGR) systems, CRISPR regions and artifacts, and viral DNA. 
 
 ## Software Requirements: 
 - Python 3.8 
