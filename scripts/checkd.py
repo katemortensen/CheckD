@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Author: Kate Mortensen
-# Last Modified: 9/24/2024
+# Last Modified: 10/26/2024
 # Purpose: Assess the diversity across MAGs
 
 
@@ -95,8 +95,6 @@ parser4.add_argument("-illumina_reverse_reads", "--illumina_reverse_reads", meta
 parser4.add_argument("-threads", "--threads", metavar="", help="", required=False)
 parser4.add_argument("-window", "--window", metavar="", help="", required=False)
 parser4.add_argument("-step", "--step", metavar="", help="", required=False)
-
-
 
 args = parser.parse_args()
 command = args.command
@@ -543,14 +541,14 @@ if (command == 'region') or (command == 'all'):
                     print(f"Command failed with error: {e.stderr}")
             else:
                 print(f'VirSorter2 already done for {mag_name}')
-
-
-    # remove VirSorter2 singularity file (.sif file is memory intensive)
+    
+    # remove VirSorter2 singularity file (.sif file is memory intensive)    
     try:
-        subprocess.run(['rm', '-f', f'{virsorter_out_dir}/virsorter2.sif'],
+        subprocess.run(['rm', '-f', f'{virsorter_out_dir}/virsorter2.sif'], 
                        check=True, capture_output=True, text=True)
     except subprocess.CalledProcessError as e:
         print('unable to remove virsorter2.sif file')
+
 
 # %%
 
@@ -1383,6 +1381,24 @@ if (command == 'stats') or (command == 'all'):
         ], check=True, capture_output=True, text=True)
     except subprocess.CalledProcessError as e:
         print(f"\nCommand failed with error: {e.stderr}")
+  
+  
+    print('''\nplot_cohort_diversity_qqplot.py''')
+    
+    # input files:
+    # ../ad_norm_cohort_stats/<basename>.mag_stats
+    # output files:
+    # ../ad_norm_cohort_stats_plots
+    
+    try:
+        subprocess.run([
+            f'{python}', f'{scripts}/plot_cohort_diversity_qqplot.py',
+            '--cohort_mag_stats_file', f'{ad_norm_cohort_stats_dir}/{basename}.mag_stats',
+            '--output_dir', f'{wkdir}/plots/ad_norm_cohort_stats_plots',
+            '--basename', f'{basename}'
+        ], check=True, capture_output=True, text=True)
+    except subprocess.CalledProcessError as e:
+        print(f"\nCommand failed with error: {e.stderr}")  
         
 
 # %% 
@@ -1506,7 +1522,9 @@ if (command == 'sliding_window_plot') or (command == 'all'):
                     mag_name = pmag.split('/')[-1].split(mag_extension)[0]
                     print(f'\n{mag_name}')
                     plot_mag_hotspot_func(pmag)
-                    
+         
+
+           
 
 # %% 
 

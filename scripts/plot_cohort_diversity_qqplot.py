@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
 # Author: Kate Mortensen
-# Last Modified: 8/22/2024
-# Purpose: Determine MAG in cohort with least diversity 
+# Last Modified: 10/26/2024
+# Purpose: Plot qq-plot of MAG diversities in cohort
 
 
 # %% 
+import os
 import argparse
 import pandas as pd
 import statsmodels.api as sm
@@ -15,40 +16,43 @@ import scipy.stats as stats
 # %% 
 # arguments
 parser = argparse.ArgumentParser()
+parser.add_argument("-basename", "--basename", metavar="basename", help="specify the basename", required=True)
+parser.add_argument("-cohort_mag_stats_file", "--cohort_mag_stats_file", metavar="<basename>.mag_stats", help="specify the path where input files are (<basename>.mag_stats)", required=True)
 parser.add_argument("-output_dir", "--output_dir", metavar="output_dir", help="specify the path where the outputs will go", required=True)
-
-
-parser.add_argument("-ad_norm_file", "--ad_norm_file", metavar="<mag>.dgr_ad_norm_file", help="specify the path where input files are (<mag>.dgr_ad_norm_file)", required=True)
-parser.add_argument("-output_dir", "--output_dir", metavar="output_dir", help="specify the path where the outputs will go", required=True)
-parser.add_argument("-assembly_name", "--assembly_name", metavar="assembly_name", help="output assembly_name", required=True)
 
 args = parser.parse_args()
-ad_norm_file = args.ad_norm_file
+basename = args.basename
+mag_stats_file = args.cohort_mag_stats_file
 output_dir = args.output_dir
-assembly_name = args.assembly_name
-mag_desc_stats_out = f'{output_dir}/{assembly_name}.dgr_mag_desc_stats'
+metric = 'mean_ad_norm'
+
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 
-delete this hardcoded comment before running
+# delete this hardcoded comment before running
 
 # %% 
 # Test Vars
 
 # humanO1
-basename = 'humanO1'
-metric = 'mean_ad_norm'
-# metric = 'stdev_ad_norm'
-# metric = 'prcnt_lessthan1'
+# basename = 'humanO1'
+# wkdir = f'/home/kmorten/{basename}_CheckD/'
 
-##################### 
+# sheepA
+# basename = 'sheepA'
+# wkdir = f'/home/kmorten/{basename}_checkd/'
 
-wkdir = f'/home/kmorten/{basename}_CheckD/'
-ad_norm_cohort_stats_dir = f'{wkdir}/ad_norm_cohort_stats'
-mag_stats_file = f'{ad_norm_cohort_stats_dir}/{basename}.mag_stats'
 
+# ##################### 
+
+# cohort_mag_stats_dir = f'{wkdir}/ad_norm_cohort_stats'
+# mag_stats_file = f'{cohort_mag_stats_dir}/{basename}.mag_stats'
+# output_dir = f'/{wkdir}/plots/ad_norm_cohort_stats_plots'
+# metric = 'mean_ad_norm'
+# # metric = 'stdev_ad_norm'
+# # metric = 'prcnt_lessthan1'
 
 #####################
 
@@ -83,7 +87,7 @@ plt.show()
 
 
 # %%
-# # QQ-Plot against a t-distribution
+# QQ-Plot against a t-distribution
 # n = len(df)
 # fig = sm.qqplot(df['mean_ad_norm'], dist=stats.t, distargs=(n,))  # 'distargs' sets the degrees of freedom for the t-distribution
 # plt.title("QQ-Plot vs. t-Distribution")
