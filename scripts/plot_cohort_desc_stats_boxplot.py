@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Author: Kate Mortensen
-# Last Modified: 8/9/2024
+# Last Modified: 10/26/2024
 # Purpose: box & whiskers plot of allelic depth stats 
 
 # %% 
@@ -38,6 +38,13 @@ if not os.path.exists(output_dir):
 # wkdir = '/home/kmorten/humanO1_CheckD/'
 # basename = 'humanO1'
 # cohort_desc_stats_file = f'{wkdir}/ad_norm_cohort_stats/{basename}.cohort_desc_stats'
+
+
+# humanO1
+# wkdir = '/home/kmorten/sheepA_checkd/'
+# basename = 'sheepA'
+# cohort_desc_stats_file = f'{wkdir}/ad_norm_cohort_stats/{basename}.cohort_desc_stats'
+
 
 # ##################
 # output_dir = f'{wkdir}/plots/ad_norm_cohort_stats_plots'
@@ -98,6 +105,7 @@ def create_plot_by_metric(df, metric, plot_out, inverse_metric=True):
     plt.savefig(f'{plot_out}.png', format="png", bbox_inches="tight")
     plt.savefig(f'{plot_out}.pdf', format="pdf", bbox_inches="tight")
     plt.show()
+    plt.close()
 
     return
 
